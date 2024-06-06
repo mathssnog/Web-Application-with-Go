@@ -1,0 +1,39 @@
+Vamos entender como funciona os aplicativos Web.
+
+(1) Imagine uma pessoa que gostaria de acessar um um servidor que contém um site;
+(2) Essa pessoa inicia seu navegador Web;
+(3) Digita o endereço para esse servidor, ou seja, a sua URL;
+    |
+    |___ O computador vai para um servidor de DNS (DNS server), resolvendo a URL para um endereço IP
+    |
+    |___ Lembrando que a sequência para resolver DNS é realizada pelos seguintes passos:
+    |            |
+    |            |___ Verificação de cache: Caso seu browser contenha o cache, temos a sua utilização 
+    |            |___ Root Server: Temos a verificação no servidor Root, onde este retorna os TLD (Top Level Domain)
+    |            |___ Top Level Domain: Temos agora a verificação no TLD, onde este retorna os Authoritative names server para os .com domains
+    |            |___ Domain Server: Retorna o endereço IP que está sendo acessado.
+    |
+    |___ O endereço IP é exclusivo para cada dispositivo que está na Internet
+    |
+    |
+    |___ Após resolver o DNS, envia-se uma solicitação para o servidor. A solicitação pode ser algo como: Mostrar o homepage do site.com 
+    |
+    |___ O servidor faz a mágica por trás. Pode ser apenas uma página HTML estática e, se for só isso, ele carrega a página e toda as solicitações
+    |    ou imagens associadas ou o que quer que esteja na página e a envia de volta ao usuário.
+    |
+    |___ Porém, em muitos casos, existe algum processo por trás desta página, onde este servidor pode conter um banco de dados, um cache, algum
+    |    aplicativo em execução, etc. Essas coisas farão alguma mágica para criar o HTML de modo que ele não exista de maneira estática no servidor.
+    |    Cria-se a página e envia-se devolta ao usuário depois que toda a mágica acontecer.
+    |
+    |___ Familiarizar-se com o Request and Response
+
+Um servidor Web é apenas uma parte de um aplicativo, pode conter também um banco de dados, um cache, pode ter mais de um aplicativo no servidor.
+O curso se trata de um aplicativo monolítico em que todo o código reside em uma única base. 
+Porém, existe algo chamado arquitetura orientada a serviços (SOA), em que seu aplicativo Web consiste em uma série de aplicativos Web. 
+    - Pode existir então o aplicativo para autenticar usuários;
+    - O aplicativo para gerar uma fatura;
+    - O aplicativo X, que faça outro processo que gera uma informação para a página Web.
+
+Estudaremos um aplicativo monolítico que se encarrega de gerar páginas da Web e enviá-las de volta ao usuário e cuidar da autenticação.
+
+
