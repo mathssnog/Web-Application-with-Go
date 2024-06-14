@@ -9,7 +9,7 @@ func main() {
 	// fmt.Println("Hello world")
 
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) { //a função de tratamento exige que a solicitação seja um ponteiro.
-		n, err := fmt.Fprintf(w, "Hello world") // Esse cara aqui está mostrando no browser quando acessamos nosso localhost.
+		n, err := fmt.Fprintf(w, "Hello world") // Esse cara aqui está mostrando no browser quando acessamos nosso localhost. 'Fprintf printa o número de bytes'
 		if err != nil {
 			fmt.Println(err)
 		}
